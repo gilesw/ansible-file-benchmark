@@ -4,30 +4,30 @@
   copy:
     src: "testfile_a"
     dest: "/var/tmp/individual"
-    owner: "{{ansible_user_id}}"
-    group: "{{ansible_user_id}}"
+    owner: "{{file_benchmark_owner}}"
+    group: "{{file_benchmark_group}}"
     mode: 0644
 
 - name: copy testfile_b
   copy:
     src: "testfile_b"
     dest: "/var/tmp/individual"
-    owner: "{{ansible_user_id}}"
-    group: "{{ansible_user_id}}"
+    owner: "{{file_benchmark_owner}}"
+    group: "{{file_benchmark_group}}"
     mode: 0644
 
 - name: copy testfile_c
   copy:
     src: "testfile_c"
     dest: "/var/tmp/individual"
-    owner: "{{ansible_user_id}}"
-    group: "{{ansible_user_id}}"
+    owner: "{{file_benchmark_owner}}"
+    group: "{{file_benchmark_group}}"
     mode: 0644
 
 - name: copy testfile_d
   copy:
     src: "testfile_d"
     dest: "/var/tmp/individual"
-    owner: "{{ansible_user_id}}"
-    group: "{{ansible_user_id}}"
+    owner: "{{file_benchmark_owner}}"
+    group: "{{file_benchmark_group}}"
     mode: 0644
