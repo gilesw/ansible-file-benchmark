@@ -16,6 +16,6 @@ script:
   # Syntax check
   - ansible-playbook -i inventory tests/playbook.yml --syntax-check
 
-  - ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
-  - ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
 
