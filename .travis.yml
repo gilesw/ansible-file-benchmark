@@ -7,15 +7,6 @@ env:
   matrix:
      - ANSIBLE_VERSION="2.2.2.0"
 
-before_install:
-  # Install some dependencies
-  - sudo apt-get update -qq -y
-  - sudo apt-get install -qq -y python-apt python-pycurl locales
-  - echo 'en_US.UTF-8 UTF-8' | sudo tee /var/lib/locales/supported.d/local
-
-  # setup postgres installation and the python libs..
-  - sudo apt-get -y install postgresql python-psycopg2
-
 install:
   - pip install ansible=="$ANSIBLE_VERSION"
 
