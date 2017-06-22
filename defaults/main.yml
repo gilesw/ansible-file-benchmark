@@ -1,0 +1,21 @@
+file_benchmark_dest: /tmp/
+file_benchmark_directory_mode: omit
+file_benchmark_owner:  "{{ ansible_user_id }}"
+file_benchmark_group:  "{{ ansible_user_gid }}"
+file_benchmark_mode:   0644
+file_benchmark_notify: 'omit'
+
+file_benchmark:
+  testfile_a:
+    src: 'testfile_a'
+    dest: "{{ file_benchmark_dest }}"
+  testfile_b:
+    src: 'testfile_b'
+    dest: "{{ file_benchmark_dest }}"
+  testfile_c:
+    src: 'testfile_c'
+    dest: "{{ file_benchmark_dest }}"
+  testfile_d:
+    src: 'testfile_d'
+    dest: "{{ file_benchmark_dest }}"
+

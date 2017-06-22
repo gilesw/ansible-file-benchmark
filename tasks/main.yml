@@ -1,0 +1,29 @@
+---
+
+- name: create dirs
+  file:
+    state: directory
+    dest: "{{ item }}"
+  with_items:
+    - /var/tmp/individual
+    - /var/tmp/hash
+  tags:
+    - always
+
+- include: copy_hash.yml
+  tags: [ hash ]
+
+- include: copy_individual.yml
+  tags: [ individual ]
+
+
+- name: purge dirs
+  file:
+    state: absent
+    dest: "{{ item }}"
+  with_items:
+    - /var/tmp/individual
+    - /var/tmp/hash
+  tags:
+    - always
+

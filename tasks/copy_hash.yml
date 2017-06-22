@@ -1,0 +1,12 @@
+---
+
+- name: copy files in single statement
+  copy:
+    src: "{{ item.value.src }}"
+    dest: "{{ item.value.dest }}"
+    directory_mode: "{{ item.value.directory_mode | default(file_benchmark_directory_mode) }}"
+    owner: "{{ item.value.owner | default(file_benchmark_owner)}}"
+    group: "{{ item.value.group | default(file_benchmark_group) }}"
+    mode: "{{ item.value.mode | default(file_benchmark_mode)}}"
+  notify: "{{ item.value.notify | default(file_benchmark_notify) }}"
+  with_dict: "{{ file_benchmark }}"
