@@ -20,3 +20,9 @@ script:
   - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
   - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
 
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
+
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
+  - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
+
