@@ -7,15 +7,24 @@ env:
   matrix:
      - ANSIBLE_VERSION="2.3.1.0"
 
+before_install:
+  - sudo apt-get install -y strace
+
 install:
   - pip install ansible=="$ANSIBLE_VERSION"
 
+
 script:
   - echo localhost > inventory
+
+  - strace ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash 2>&1 | grep ansible.cfg
+  - cat ansible.cfg
+
   # wait for load to drop
   - sleep 100
   # Syntax check
   - ansible-playbook -i inventory tests/playbook.yml --syntax-check
+
 
   - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags hash
   - time ansible-playbook -i inventory tests/playbook.yml --connection=local --tags individual
