@@ -12,7 +12,8 @@ install:
 
 script:
   - echo localhost > inventory
-
+  # wait for load to drop
+  - sleep 100
   # Syntax check
   - ansible-playbook -i inventory tests/playbook.yml --syntax-check
 
